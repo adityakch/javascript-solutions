@@ -1,6 +1,6 @@
 function majorityElement(arr, n) {
     let maxCount = 0;
-    let ind = -1;
+    let ind = 0;
      
     for(let i = 0; i < n; i++)
     {
