@@ -7,12 +7,12 @@ function maxPathSum(mat) {
     for (let j of mat[0]) {
         m += 1;
     }
-    output = -1;
+    output = 0;
     for (i=0; i<m; i++) {
         output = Math.max(output,mat[0][i]);
     }
     for (i=1; i<n; i++) {
-        output = -1;
+        output = 0;
         for (j=0; j<m; j++) {
             if ((j>0) && (j<m-1)) {
                 mat[i][j] += Math.max(mat[i-1][j], Math.max(mat[i-1][j-1], mat[i-1][j+1]));
