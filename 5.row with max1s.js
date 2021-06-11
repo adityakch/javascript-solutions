@@ -1,24 +1,19 @@
 function requiredRow(matrix) {
-    a = matrix.length;
-    //console.log(a);
-    b = matrix[0].length;
-    //console.log(b);
-    c = 0;
-    ind = b-1;
-    
-    for (let i=0; i<a; i++) {
-        if ((ind >= 0) && (matrix[i][ind] == 1)) {
-            ind -= 1;
-            c = i;
+    let arr = [];
+    for (let i of matrix) {
+        let count = 0;
+        for (let j of i) {
+            if (j === 1) {
+                count ++;
+            }
         }
+        arr.push(count);
+        //console.log(arr)
     }
-    if ((c == 0) && (matrix[0][b-1] == 0)) {
-        return 0;
-    }
-    return c;
+    let ind = arr.indexOf(Math.max(...arr));
+    return ind;
 }
 
 
 let matrix  = [[0,0,0,1],[1,0,1,1],[1,1,1,1],[0,0,0,0]];
-let res = requiredRow(matrix);
-console.log(res);
+console.log(requiredRow(matrix));
